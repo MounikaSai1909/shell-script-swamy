@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MOVIES= ( "RRR" "DJTillu" "Murari" )
+MOVIES=( "RRR", "DJTillu", "Murari" )
 
 # size of above array is 3
 # index are 0,1,2
