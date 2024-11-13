@@ -7,4 +7,4 @@ MOVIES=( "RRR" "DJTillu" "Murari" )
 
 echo " First movie is: ${MOVIES[0]} "
 
-echo " All movies are : ${@} "
+echo " All movies are : ${MOVIES[@]} "
