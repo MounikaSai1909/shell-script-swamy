@@ -8,7 +8,7 @@ LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 VALIDATE() {
       if [ $1 -eq 0 ] 
       then 
-         echo -e"$2... SUCCESS"
+         echo "$2... SUCCESS"
       else
          echo "$2... FAILURE" 
          exit 1
@@ -23,8 +23,8 @@ else
    echo " You are super user"
 fi
 
-dnf install mysql -y &>>$LOGFILE
+dnf install mysqll -y &>>$LOGFILE
 VALIDATE $? "Installing MYSQL"
 
-dnf install git  -y &>>$LOGFILE
+dnf install gitt  -y &>>$LOGFILE
 VALIDATE $? "Installing git"
