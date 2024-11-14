@@ -11,7 +11,9 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 R="\e[31m"
 G="\e[32m"
+Y="\e[33m"
 N="\e[0m"
+
 
 if [ $USERID -eq 0 ]
 then
@@ -27,7 +29,7 @@ do
    dnf list installed $i &>>$LOGFILE
    if [ $? -eq 0 ]
    then 
-      echo -e  "$i already installed... $G skipping $N"
+      echo -e  "$i already installed... $Y skipping $N"
    else
       echo -e "$i not installed...$R Need to install $N"
     fi
