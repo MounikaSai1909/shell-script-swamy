@@ -14,6 +14,16 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+VALIDATE(){
+     if [ $1 -eq 0 ]
+     then
+         echo " $2.. SUCCESS"
+     else
+         echo " $2... FAILURE"
+     fi
+
+}
+
 
 if [ $USERID -eq 0 ]
 then
@@ -31,6 +41,8 @@ do
    then 
       echo -e  "$i already installed... $Y skipping $N"
    else
-      echo -e "$i not installed...$R Need to install $N"
+      dnf install $i -y &>> $LOGFILE
+      VALIDATE $? "Installation of $i"
+
     fi
 done
