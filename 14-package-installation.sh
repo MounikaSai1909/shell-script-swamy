@@ -13,17 +13,6 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-VALIDATE() {
-   if [ $1 -eq 0 ]
-   then 
-      echo " $2 SUCCESS "
-   else
-      echo  " $2 FAILURE "
-      exit
-    fi
-
-}
-
 if [ $USERID -eq 0 ]
 then
    echo " You are a super user "
@@ -38,8 +27,8 @@ do
    dnf list installed $i &>>$LOGFILE
    if [ $? -eq 0 ]
    then 
-      echo "$i already installed... skipping "
+      echo -e  "$i already installed... $G skipping $N"
    else
-      echo "$i not installed... Need to install"
+      echo "$i not installed...$R Need to install $N"
     fi
 done
